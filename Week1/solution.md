@@ -17,7 +17,8 @@
 - 사전순으로 앞서는 것을 출력: 오름차순으로 팰린드롬 생성(map 사용)
 
 ##### 참고 자료
-https://chanhuiseok.github.io/posts/algo-37/ &nbsp;
+https://chanhuiseok.github.io/posts/algo-37/
+
 https://life-with-coding.tistory.com/305
 
 ##### 문제 풀이
@@ -34,9 +35,12 @@ https://life-with-coding.tistory.com/305
 - queue가 빌 때까지 탐색 후 모든 토마토가 익었는지 확인
 
 ##### 참고 자료
-https://life-with-coding.tistory.com/408 &nbsp;
-https://karen0117.tistory.com/106 &nbsp;
-https://wooono.tistory.com/316 &nbsp;
+https://life-with-coding.tistory.com/408
+
+https://karen0117.tistory.com/106
+
+https://wooono.tistory.com/316
+
 https://tooo1.tistory.com/166 (풀이참고)
 
 ##### 문제 풀이
