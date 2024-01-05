@@ -17,7 +17,7 @@
 - 사전순으로 앞서는 것을 출력: 오름차순으로 팰린드롬 생성(map 사용)
 
 ##### 참고 자료
-https://chanhuiseok.github.io/posts/algo-37/
+https://chanhuiseok.github.io/posts/algo-37/ &nbsp;
 https://life-with-coding.tistory.com/305
 
 ##### 문제 풀이
@@ -25,3 +25,25 @@ https://life-with-coding.tistory.com/305
 - 문자열의 길이가 홀수일 때 홀수개인 알파벳이 존재(한 종류)할 시 mid 변수에 저장
 - 팰린드롬의 중앙을 기준으로 앞을 front에 저장하고 뒤는 back에 저장, back은 reverse
 - "I'm Sorry Hansoo" 출력 후 exit(0) 사용 유의
+---
+## 📝7576번: 토마토
+##### 알고리즘 구상
+- MxN의 격자모양 상자의 칸 속 익은 토마토 위치: x, y 좌표(pair 사용)
+- 처음에 '1'을 탐색하고 이 '1'을 시작으로 토마토를 탐색
+- queue에 담겨있는 1의 위치에서 상하좌우에 '0'이 있으면 '1' 토마토로 간주 
+- queue가 빌 때까지 탐색 후 모든 토마토가 익었는지 확인
+
+##### 참고 자료
+https://life-with-coding.tistory.com/408 &nbsp;
+https://karen0117.tistory.com/106 &nbsp;
+https://wooono.tistory.com/316 &nbsp;
+https://tooo1.tistory.com/166 (풀이참고)
+
+##### 문제 풀이
+- 큐를 이용한 BFS 탐색
+  1. '1'을 발견하면 위치를 queue에 저장, visited 배열에 +1
+  2. queue에서 하나씩 위치를 pop하면서 상하좌우 위치의 토마토 상태를 확인
+  3. 방문하지 않았고 익지 않은 토마토가 있는 위치는 다시 queue에 push
+  4. 2번과 3번을 queue에 아무것도 없을 때까지 반복
+  5. visited에 최대 일수를 days에 저장
+  6. 만약 익지 않은 토마토가 존재하고, 그 위치에 방문하지 않았을 경우 토마토는 모두 익을 수 없음
