@@ -32,4 +32,19 @@ https://coding-factory.tistory.com/596
 https://choryeonworkshop.tistory.com/119
 
 ##### 문제 풀이
+- 미성공(중복 조건을 어떻게 해결할 것인가?)
+
+  ---
+## 📝10026번: 적록색약
+##### 알고리즘 구상
+- DFS를 이용하여 한 구역을 탐색 -> 구역 탐색이 끝날 때마다 해당 구역 색 +1
+- 방문한 곳은 O 표시
+- R 구역과 G 구역이 인접해있는 경우 -1 씩 적용하여 적록색약 사람이 보는 구역 수 출력
+
+##### 참고 자료
+https://sonsh0824.tistory.com/entry/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B3%B5%EB%B6%802-DFS%EA%B9%8A%EC%9D%B4-%EC%9A%B0%EC%84%A0-%ED%83%90%EC%83%89-C
+
+https://karen0117.tistory.com/88
+
+##### 문제 풀이
 - 미성공
