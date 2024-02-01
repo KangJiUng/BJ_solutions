@@ -1,39 +1,48 @@
-//¹éÁØ 11725¹ø Æ®¸®ÀÇ ºÎ¸ğ Ã£±â
+//ë°±ì¤€ 1158ë²ˆ ìš”ì„¸í‘¸ìŠ¤ ë¬¸ì œ
 
 #include <iostream>
-#include <vector>
-#define MAX 100001
+#include <list>
 using namespace std;
 
-int node[MAX]; //°¢ ³ëµå¿¡ ´ëÇÑ ºÎ¸ğ ³ëµå¸¦ ÀúÀåÇÏ´Â ¹è¿­
-bool visited[MAX] = { false }; //°¢ ³ëµå¸¦ ¹æ¹®ÇßÀ½À» Ç¥½ÃÇÏ´Â ¹è¿­
-vector<int> v[MAX]; //¹«¹æÇâ Æ®¸®(³ëµå ¿¬°á¸¸)¸¦ ÀúÀåÇÏ´Â º¤ÅÍ
+int main(void) {
+    int N, K;
+    list<int> L;
 
-void dfs(int k) {
-    visited[k] = true; //¹æ¹®ÇßÀ½À» Ç¥½Ã
-    for (int i = 0; i < v[k].size(); i++) {
-        int parent = v[k][i]; 
-        if (!visited[parent]) { //¹æ¹®ÇÏÁö ¾ÊÀº ³ëµå¶ó¸é
-            node[parent] = k; //ÇöÀç ³ëµå¿¡ ¿¬°áµÈ ³ëµå¸¦ ºÎ¸ğ ³ëµå·Î ¿ì¼± ¼³Á¤
-            dfs(parent); //Àç±ÍÈ£Ãâ
+    cin >> N >> K;
+
+    if (N == 1) { // Nì´ 1ì´ë©´ ê·¸ëƒ¥ <1>ì„ ì¶œë ¥í•˜ê³  ëëƒ„
+        cout << "<1>";
+        return 0;
+    }
+    else {
+        for (int i = 1; i <= N; i++) { // 1~N ê¹Œì§€ì˜ ìˆ«ì ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
+            L.push_back(i);
         }
-    }
-}
 
-int main() {
-    int N;
-    cin >> N;
+        list<int>::iterator iter = L.begin();
 
-    for (int i = 0; i < N-1; i++) { //µÑÂ° ÁÙºÎÅÍ N-1°³ÀÇ ÁÙ¿¡ Æ®¸® »ó¿¡¼­ ¿¬°áµÈ µÎ Á¤Á¡ÀÌ ÁÖ¾îÁü
-        int x, y;
-        cin >> x >> y;
-        v[x].push_back(y);
-        v[y].push_back(x);
-    }
+        cout << "<";
 
-    dfs(1);
+        while (L.size()) {
+            for (int i = 1; i < K; i++) { // 1ë²ˆì§¸ ì‚¬ëŒë¶€í„° K-1ë²ˆì§¸ ì‚¬ëŒê¹Œì§€
+                if (++iter == L.end()) { // ë‹¤ìŒ ë°˜ë³µìê°€ ë¦¬ìŠ¤íŠ¸ì˜ ëì´ë©´
+                    iter = L.begin(); // ë°˜ë³µìë¥¼ ë‹¤ì‹œ ì²˜ìŒìœ¼ë¡œ
+                    continue;
+                }
+            }
 
-    for (int i = 2; i <= N; i++) {
-        cout << node[i] << "\n";
+            if (L.size() == 1) {
+                cout << *iter;  // ë°˜ë³µìëŠ” * ì—°ì‚°ìë¥¼ ì‚¬ìš©í•˜ì—¬ ì»¨í…Œì´ë„ˆ ë‚´ë¶€ì˜ ì›ì†Œë¥¼ ê°€ë¦¬í‚¤ê³  ì ‘ê·¼í•  ìˆ˜ ìˆì–´ì•¼í•¨
+            }
+            else {
+                cout << *iter << ", ";
+            }
+
+            iter = L.erase(iter);
+
+            iter = (iter == L.end()) ? L.begin() : iter; // ì‚­ì œí•œ ì›ì†Œ ìë¦¬ê°€ ì´ë¯¸ endì¸ ê²½ìš° beginìœ¼ë¡œ ë³´ëƒ„
+        }
+
+        cout << ">";
     }
 }
