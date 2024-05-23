@@ -22,3 +22,15 @@
 
 ##### 문제 풀이
 - 알고리즘 구상과 거의 동일
+
+---
+## 📝 타겟넘버
+##### 알고리즘 구상
+- numbers의 숫자를 하나씩 + 경우 - 경우를 적용해가면서 총합과 타겟넘버를 비교, 같을 때마다 answer +1
+
+##### 참고 자료
+- https://velog.io/@maantano/%EC%BD%94%EB%94%A9%ED%85%8C%EC%8A%A4%ED%8A%B8-%ED%8C%8C%EC%9D%B4%EC%8D%AC-DFS-BFS-%EC%A0%95%EB%A6%AC
+- https://lets-hci-la-ai-withme.tistory.com/68
+
+##### 문제 풀이
+- 알고리즘 구상과 거의 동일
